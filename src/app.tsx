@@ -5,7 +5,7 @@ import SearchModal from './components/SearchModal';
 import { Prompt, Category } from './types';
 import { fetchPrompts } from './lib/api';
 
-const App: React.FC = () => {
+const PromptLibrary: React.FC = () => {
   const [prompts, setPrompts] = useState<Prompt[]>([]);
   const [filteredPrompts, setFilteredPrompts] = useState<Prompt[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
