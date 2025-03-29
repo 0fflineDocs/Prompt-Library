@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search } from 'lucide-react';
+import Button from '../ui/Button';
 import { SocialIcon } from '../ui/SocialIcons';
 
 interface HeaderProps {
