@@ -67,33 +67,6 @@ body {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Card hover effects */
-.prompt-card {
-  transition: all 0.3s ease;
-}
-
-.prompt-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--purple-glow);
-}
-
-/* Button hover effects */
-.copy-btn {
-  transition: all 0.2s ease;
-}
-
-.copy-btn:hover {
-  box-shadow: var(--green-glow);
-}
-
-.category-btn {
-  transition: all 0.2s ease;
-}
-
-.category-btn:hover {
-  box-shadow: var(--pink-glow);
-}
-
 /* Search modal animation */
 .search-modal {
   animation: fadeIn 0.2s ease-out;
