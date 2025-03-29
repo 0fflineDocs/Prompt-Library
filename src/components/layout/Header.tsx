@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Twitter, Github, Linkedin, Mail } from 'lucide-react';
+import { SocialIcon } from '../ui/SocialIcons';
 
 interface HeaderProps {
   onOpenSearch: () => void;
@@ -26,10 +26,31 @@ const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
           </button>
           
           <div className="hidden sm:flex gap-3">
-            <SocialIcon icon={<Twitter size={20} />} href="https://twitter.com" label="Twitter" hoverColor="text-pink-400" />
-            <SocialIcon icon={<Linkedin size={20} />} href="https://linkedin.com" label="LinkedIn" hoverColor="text-green-400" />
-            <SocialIcon icon={<Github size={20} />} href="https://github.com" label="GitHub" hoverColor="text-purple-400" />
-            <SocialIcon icon={<Mail size={20} />} href="mailto:contact@example.com" label="Email" hoverColor="text-pink-400" />
+             {/* Social Media Icons using SimpleIcons */}
+          <SocialIcon 
+            type="twitter" 
+            href="https://x.com/0fflineDocs" 
+          />
+          
+          <SocialIcon 
+            type="bluesky" 
+            href="https://bsky.app/profile/simonhakansson.com" 
+          />
+          
+          <SocialIcon 
+            type="linkedin" 
+            href="https://www.linkedin.com/in/simon-h%C3%A5kansson-20163b137/" 
+          />
+          
+          <SocialIcon 
+            type="mail" 
+            href="mailto:simon.ludvig.hakansson@gmail.com" 
+          />
+          
+          <SocialIcon 
+            type="github" 
+            href="https://github.com/0fflineDocs/" 
+          />
           </div>
         </div>
       </div>
