@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
   return (
     <header className="bg-gray-900 border-b border-gray-800 py-4 px-4">
       <div className="container mx-auto flex items-center justify-between">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-purple-600 text-transparent bg-clip-text">
+        <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-800 to-blue-400 text-transparent bg-clip-text">
           Prompt Library
         </h1>
         <div className="flex items-center gap-3">
