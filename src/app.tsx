@@ -14,10 +14,10 @@ const PromptLibrary: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // Fetch data once on component mount
   useEffect(() => {
     const loadData = async () => {
       try {
-        // In a real app, this would fetch from your API
         const data = await fetchPrompts();
         setPrompts(data.prompts);
         setFilteredPrompts(data.prompts);
@@ -32,6 +32,7 @@ const PromptLibrary: React.FC = () => {
     loadData();
   }, []);
 
+  // Apply filters whenever category or search query changes
   useEffect(() => {
     let result = prompts;
     
@@ -53,15 +54,6 @@ const PromptLibrary: React.FC = () => {
     setFilteredPrompts(result);
   }, [selectedCategory, searchQuery, prompts]);
 
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-  };
-
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    setIsSearchOpen(false);
-  };
-
   return (
     <div className="bg-gray-900 min-h-screen font-sans text-gray-100">
       <Header onOpenSearch={() => setIsSearchOpen(true)} />
@@ -72,18 +64,22 @@ const PromptLibrary: React.FC = () => {
           {categories.map((category) => (
             <button
               key={category.id}
-              className={`category-btn px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+              className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
                 selectedCategory === category.name 
                   ? 'bg-gray-700 border-purple-500/50 text-white' 
                   : 'bg-gray-800 border-purple-500/20 text-gray-300 hover:border-purple-500/50'
               }`}
-              onClick={() => handleCategoryChange(category.name)}
+              onClick={() => setSelectedCategory(category.name)}
             >
               {category.name}
+              {category.count && category.name !== 'All' && (
+                <span className="ml-1 text-gray-400">({category.count})</span>
+              )}
             </button>
           ))}
         </div>
 
+        {/* Prompts Grid */}
         {isLoading ? (
           <div className="flex justify-center items-center py-12">
             <div className="animate-pulse-slow text-purple-400">Loading prompts...</div>
@@ -105,7 +101,10 @@ const PromptLibrary: React.FC = () => {
       {isSearchOpen && (
         <SearchModal 
           categories={categories} 
-          onSearch={handleSearch} 
+          onSearch={(query) => {
+            setSearchQuery(query);
+            setIsSearchOpen(false);
+          }} 
           onClose={() => setIsSearchOpen(false)} 
         />
       )}
