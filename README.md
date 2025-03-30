@@ -36,10 +36,10 @@ The prompt library currently includes the following categories:
 
 - Special thanks to the open-source community for the tools and libraries that made this project possible
 
-## 📞 Contact
+## 💻 Contact
 
-- Twitter: [@0fflineDocs](https://x.com/0fflineDocs)
-- Bluesky: [simonhakansson.com](https://bsky.app/profile/simonhakansson.com)
 - LinkedIn: [Simon Håkansson](https://www.linkedin.com/in/simon-h%C3%A5kansson-20163b137/)
+- Bluesky: [simonhakansson.com](https://bsky.app/profile/simonhakansson.com)
+- X: [@0fflineDocs](https://x.com/0fflineDocs)
 - Email: [simon.ludvig.hakansson@gmail.com](mailto:simon.ludvig.hakansson@gmail.com)
 - GitHub: [0fflineDocs](https://github.com/0fflineDocs/)
