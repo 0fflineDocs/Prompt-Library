@@ -1,8 +1,9 @@
 {
-    "id": "1",
-    "title": "Creative Writing Assistant",
-    "category": "Writing",
-    "content": "I want you to act as a creative writing coach. I'm working on a short story about [topic] and need help with developing compelling characters. Please provide guidance on how to make my characters more three-dimensional and believable.",
-    "tags": ["writing", "creativity", "character development"],
-    "createdAt": "2023-11-10T12:30:00Z"
-  }
+  "id": "1",
+  "title": "Creative Writing Assistant",
+  "category": "Writing",
+  "description": "A prompt to help with creative writing and character development. Ideal for fiction writers working on short stories, novels, or screenplays.",
+  "content": "I want you to act as a creative writing coach. I'm working on a short story about [topic] and need help with developing compelling characters. Please provide guidance on how to make my characters more three-dimensional and believable.",
+  "tags": ["writing", "creativity", "character development"],
+  "createdAt": "2023-11-10T12:30:00Z"
+}
