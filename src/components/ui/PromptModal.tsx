@@ -67,9 +67,19 @@ const PromptModal: React.FC<PromptModalProps> = ({ prompt, onClose, onCopy, isCo
         </div>
         
         <div className="p-5 overflow-y-auto">
-          <pre className="text-gray-300 whitespace-pre-wrap font-sans">
-            {prompt.content}
-          </pre>
+          {prompt.description && (
+            <div className="mb-4 pb-4 border-b border-gray-700">
+              <h4 className="text-sm font-medium text-gray-400 mb-2">Description:</h4>
+              <p className="text-gray-300">{prompt.description}</p>
+            </div>
+          )}
+          
+          <div>
+            <h4 className="text-sm font-medium text-gray-400 mb-2">Prompt:</h4>
+            <pre className="text-gray-300 whitespace-pre-wrap font-sans">
+              {prompt.content}
+            </pre>
+          </div>
           
           <div className="flex flex-wrap gap-2 mt-6">
             {prompt.tags.map((tag) => (
