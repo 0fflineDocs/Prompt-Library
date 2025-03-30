@@ -30,7 +30,7 @@ const PromptCard: React.FC<PromptCardProps> = ({ prompt }) => {
           
           <div className="h-24 overflow-hidden">
             <p className="text-gray-300 text-sm mb-4 line-clamp-4">
-              {prompt.content}
+              {prompt.description || prompt.content.substring(0, 150) + "..."}
             </p>
           </div>
           
