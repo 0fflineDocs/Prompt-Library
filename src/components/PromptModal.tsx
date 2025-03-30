@@ -1,3 +1,4 @@
+// src/components/ui/PromptModal.tsx
 import React, { useEffect, useRef } from 'react';
 import { X, Copy, Check } from 'lucide-react';
 import { Prompt } from '../../types';
