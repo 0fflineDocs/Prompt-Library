@@ -2,7 +2,7 @@
 
 A curated collection of Generative AI prompts to enhance your productivity and creativity when working with AI assistants. This web application showcases a variety of prompt templates organized by categories, making it easy to find and use effective prompts for different purposes.
 
-<img width="1547" alt="image" src="https://github.com/user-attachments/assets/f022802c-110b-4897-b825-87e954cc70a0" />
+<img width="1301" alt="prompt-lib" src="https://github.com/user-attachments/assets/1a82b607-027f-4e3d-b1b0-ae94cee11aaf" />
 
 ## 🚀 Features
 
