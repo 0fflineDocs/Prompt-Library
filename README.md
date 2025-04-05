@@ -32,8 +32,4 @@ The prompt library currently includes the following categories:
 - **Radix UI**: For accessible component primitives
 - **Lucide React**: For beautiful icons
 
-## 🙏 Acknowledgments
-
-- Special thanks to the open-source community for the tools and libraries that made this project possible
-
 ---
