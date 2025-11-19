@@ -27,16 +27,6 @@ const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
 
           {/* Social Media Icons */}
           <SocialIcon 
-            type="twitter" 
-            href="https://x.com/0fflineDocs" 
-          />
-          
-          <SocialIcon 
-            type="bluesky" 
-            href="https://bsky.app/profile/simonhakansson.com" 
-          />
-          
-          <SocialIcon 
             type="linkedin" 
             href="https://www.linkedin.com/in/simon-h%C3%A5kansson-20163b137/" 
           />
