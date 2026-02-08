@@ -11,7 +11,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "clsx": "^2.1.0",
     "framer-motion": "^12.33.0",
-    "lucide-react": "^0.284.0",
+    "lucide-react": "^0.563.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "tailwind-merge": "^2.2.0"
