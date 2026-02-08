@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Header from './components/layout/Header';
 import Button from './components/ui/Button';
 import PromptCard from './components/ui/PromptCard';
@@ -56,25 +57,25 @@ const PromptLibrary: React.FC = () => {
   }, [selectedCategory, searchQuery, prompts]);
 
   return (
-    <div className="bg-gray-900 min-h-screen font-sans text-gray-100">
+    <div className="bg-slate-900 min-h-screen font-sans text-slate-100">
       <Header onOpenSearch={() => setIsSearchOpen(true)} />
       
       {/* Category Filter */}
-      <div className="max-w-7xl mx-auto px-6 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-wrap gap-3 mb-8">
           {categories.map((category) => (
             <button
               key={category.id}
-              className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                 selectedCategory === category.name 
-                  ? 'bg-gray-700 border-purple-500/50 text-white' 
-                  : 'bg-gray-800 border-purple-500/20 text-gray-300 hover:border-purple-500/50'
+                  ? 'bg-slate-800 border border-slate-600/50 text-slate-100' 
+                  : 'bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-slate-200 hover:border-slate-600/50'
               }`}
               onClick={() => setSelectedCategory(category.name)}
             >
               {category.name}
               {category.count && category.name !== 'All' && (
-                <span className="ml-1 text-gray-400">({category.count})</span>
+                <span className="ml-1 text-slate-500">({category.count})</span>
               )}
             </button>
           ))}
@@ -83,32 +84,34 @@ const PromptLibrary: React.FC = () => {
         {/* Prompts Grid */}
         {isLoading ? (
           <div className="flex justify-center items-center py-12">
-            <div className="animate-pulse-slow text-purple-400">Loading prompts...</div>
+            <div className="animate-pulse text-slate-400">Loading prompts...</div>
           </div>
         ) : filteredPrompts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
-            {filteredPrompts.map((prompt) => (
-              <PromptCard key={prompt.id} prompt={prompt} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filteredPrompts.map((prompt, index) => (
+              <PromptCard key={prompt.id} prompt={prompt} index={index} />
             ))}
           </div>
         ) : (
-          <div className="text-center py-12 text-gray-400">
+          <div className="text-center py-12 text-slate-400">
             <p>No prompts found. Try adjusting your filters or search query.</p>
           </div>
         )}
       </div>
 
       {/* Search Modal */}
-      {isSearchOpen && (
-        <SearchModal 
-          categories={categories} 
-          onSearch={(query) => {
-            setSearchQuery(query);
-            setIsSearchOpen(false);
-          }} 
-          onClose={() => setIsSearchOpen(false)} 
-        />
-      )}
+      <AnimatePresence>
+        {isSearchOpen && (
+          <SearchModal 
+            categories={categories} 
+            onSearch={(query) => {
+              setSearchQuery(query);
+              setIsSearchOpen(false);
+            }} 
+            onClose={() => setIsSearchOpen(false)} 
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

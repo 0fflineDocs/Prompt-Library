@@ -1,5 +1,6 @@
 // src/components/ui/PromptModal.tsx
 import React, { useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { X, Copy, Check } from 'lucide-react';
 import { Prompt } from '../../types';
 
@@ -41,63 +42,70 @@ const PromptModal: React.FC<PromptModalProps> = ({ prompt, onClose, onCopy, isCo
   };
 
   return (
-    <div 
-      className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50 animate-fade-in"
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
       onClick={handleClickOutside}
     >
-      <div 
+      <motion.div 
         ref={modalRef}
-        className="bg-gray-800 w-full max-w-3xl rounded-xl shadow-2xl border border-gray-700 animate-slide-up max-h-[90vh] flex flex-col overflow-hidden"
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-xl bg-slate-900 border border-slate-700/50 shadow-2xl"
         tabIndex={-1}
       >
-        <div className="p-5 border-b border-gray-700 flex justify-between items-center sticky top-0 bg-gray-800 z-10">
+        <div className="p-5 border-b border-slate-700/30 flex justify-between items-center sticky top-0 bg-slate-900 backdrop-blur-sm z-10">
           <div className="flex items-center gap-3">
-            <h3 className="text-xl font-semibold text-white">{prompt.title}</h3>
-            <span className="text-xs font-medium px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full">
+            <h3 className="text-lg font-semibold text-slate-50">{prompt.title}</h3>
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400">
               {prompt.category}
             </span>
           </div>
           <button 
             onClick={onClose}
-            className="text-gray-400 hover:text-white p-1 rounded-full hover:bg-gray-700"
+            className="text-slate-400 hover:text-slate-200 p-1 rounded-full hover:bg-slate-800 transition-colors duration-200"
             aria-label="Close modal"
           >
             <X size={20} />
           </button>
         </div>
         
-        <div className="p-5 overflow-y-auto">
+        <div className="p-5">
           {prompt.description && (
-            <div className="mb-4 pb-4 border-b border-gray-700">
-              <h4 className="text-sm font-medium text-gray-400 mb-2">Description:</h4>
-              <p className="text-gray-300">{prompt.description}</p>
+            <div className="mb-4 pb-4 border-b border-slate-700/30">
+              <h4 className="text-sm font-medium text-slate-400 mb-2">Description:</h4>
+              <p className="text-slate-300">{prompt.description}</p>
             </div>
           )}
           
           <div>
-            <h4 className="text-sm font-medium text-gray-400 mb-2">Prompt:</h4>
-            <pre className="text-gray-300 whitespace-pre-wrap font-sans">
+            <h4 className="text-sm font-medium text-slate-400 mb-2">Prompt:</h4>
+            <pre className="text-slate-200 whitespace-pre-wrap font-sans text-sm">
               {prompt.content}
             </pre>
           </div>
           
           <div className="flex flex-wrap gap-2 mt-6">
             {prompt.tags.map((tag) => (
-              <span key={tag} className="text-xs bg-gray-700 text-gray-300 px-2 py-1 rounded">
+              <span key={tag} className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium border border-slate-700/50 bg-slate-800/50 text-slate-300">
                 #{tag}
               </span>
             ))}
           </div>
         </div>
         
-        <div className="p-5 border-t border-gray-700 sticky bottom-0 bg-gray-800 flex justify-end">
+        <div className="p-5 border-t border-slate-700/30 sticky bottom-0 bg-slate-900 backdrop-blur-sm flex justify-end">
           <button
             onClick={onCopy}
-            className={`flex items-center gap-1 ${
+            className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
               isCopied 
-                ? 'bg-green-600/30 text-green-400' 
-                : 'bg-green-500/20 hover:bg-green-500/30 text-green-400'
-            } transition-colors px-4 py-2 rounded-md text-sm`}
+                ? 'bg-emerald-500/10 text-emerald-400' 
+                : 'bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400'
+            }`}
           >
             {isCopied ? (
               <>
@@ -112,8 +120,8 @@ const PromptModal: React.FC<PromptModalProps> = ({ prompt, onClose, onCopy, isCo
             )}
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

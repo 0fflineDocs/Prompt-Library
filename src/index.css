@@ -1,24 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --pink-glow: 0 0 20px rgba(236, 72, 153, 0.5);
-  --purple-glow: 0 0 20px rgba(167, 139, 250, 0.5);
-  --green-glow: 0 0 20px rgba(16, 185, 129, 0.5);
+  --font-logo: 'Space Grotesk', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #111827; /* bg-gray-900 */
-  color: #f9fafb; /* text-gray-100 */
+  background-color: #0F172A; /* bg-slate-900 */
+  color: #F1F5F9; /* text-slate-100 */
+}
+
+/* Logo font utility */
+.font-logo {
+  font-family: var(--font-logo);
 }
 
 /* Custom scrollbar */
@@ -27,16 +28,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937; /* bg-gray-800 */
+  background: #1E293B; /* bg-slate-800 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #374151; /* bg-gray-700 */
+  background: #334155; /* bg-slate-700 */
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4b5563; /* bg-gray-600 */
+  background: #475569; /* bg-slate-600 */
 }
 
 /* Animations */

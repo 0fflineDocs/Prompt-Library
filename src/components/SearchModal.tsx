@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { Search, X } from 'lucide-react';
 import { Category } from '../types';
 
@@ -52,28 +53,35 @@ const SearchModal: React.FC<SearchModalProps> = ({ categories, onSearch, onClose
   };
 
   return (
-    <div 
-      className="fixed inset-0 bg-black/80 flex items-start justify-center pt-24 px-4 z-50 search-modal"
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start justify-center pt-24 px-4"
       onClick={handleClickOutside}
     >
-      <div 
+      <motion.div 
         ref={modalRef}
-        className="bg-gray-800 w-full max-w-2xl rounded-xl shadow-2xl border border-gray-700 search-modal-content"
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        className="w-full max-w-2xl rounded-xl bg-slate-900 border border-slate-700/50 shadow-2xl"
       >
-        <div className="p-4 flex items-center border-b border-gray-700">
-          <Search size={20} className="text-gray-400 mr-3" />
+        <div className="p-4 flex items-center border-b border-slate-700/30">
+          <Search size={20} className="text-slate-400 mr-3" />
           <input
             ref={inputRef}
             type="text"
             placeholder="Search by keyword, category, or tag..."
-            className="bg-transparent border-none outline-none text-white w-full"
+            className="w-full px-2 py-1.5 bg-transparent text-slate-200 placeholder-slate-500 text-sm outline-none"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
           />
           <button 
             onClick={onClose}
-            className="text-gray-400 hover:text-white p-1"
+            className="text-slate-400 hover:text-slate-200 p-1 transition-colors duration-200"
             aria-label="Close search"
           >
             <X size={20} />
@@ -81,28 +89,28 @@ const SearchModal: React.FC<SearchModalProps> = ({ categories, onSearch, onClose
         </div>
         
         <div className="p-4 max-h-96 overflow-y-auto">
-          <div className="text-sm text-gray-400 mb-2">Categories</div>
+          <div className="text-sm text-slate-400 mb-2">Categories</div>
           <div className="flex flex-wrap gap-2 mb-4">
             {categories.map((category) => (
               <button 
                 key={category.id}
-                className="px-3 py-1 rounded-full bg-gray-700 text-gray-300 text-sm hover:bg-gray-600 transition-colors"
+                className="px-4 py-2 rounded-lg text-sm font-medium bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-slate-200 hover:bg-slate-800 hover:border-slate-600/50 transition-colors duration-200"
                 onClick={() => handleCategoryClick(category.name)}
               >
                 {category.name}
                 {category.count && category.name !== 'All' && (
-                  <span className="ml-1 text-gray-400">({category.count})</span>
+                  <span className="ml-1 text-slate-500">({category.count})</span>
                 )}
               </button>
             ))}
           </div>
           
-          <div className="mt-4 text-center text-gray-400">
+          <div className="mt-4 text-center text-slate-500 text-sm">
             <p>Type your search query and press Enter</p>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

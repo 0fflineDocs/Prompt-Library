@@ -76,7 +76,7 @@ export const SocialIcon: React.FC<SocialIconProps> = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`text-gray-400 hover:text-gray-300 p-2 rounded-full hover:bg-gray-800/50 inline-flex items-center justify-center ${className}`}
+      className={`text-slate-400 hover:text-slate-200 p-2 rounded-full hover:bg-slate-800/50 inline-flex items-center justify-center transition-colors duration-200 ${className}`}
       title={type.charAt(0).toUpperCase() + type.slice(1)}
     >
       <IconComponent width={size} height={size} fill="currentColor" />

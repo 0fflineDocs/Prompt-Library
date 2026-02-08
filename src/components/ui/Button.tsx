@@ -18,14 +18,14 @@ const Button = ({
   ...props 
 }: ButtonProps) => {
   // Base styles
-  const baseStyles = "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-1 focus:ring-[#8be9fd] focus:ring-offset-1 focus:ring-offset-gray-950 disabled:opacity-50 disabled:pointer-events-none";
+  const baseStyles = "inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-slate-600/50 disabled:opacity-50 disabled:pointer-events-none";
   
   // Variant styles
   const variantStyles = {
-    default: "bg-gray-800 text-gray-200 hover:bg-gray-700",
-    primary: "bg-orange-600 text-white hover:bg-orange-700",
-    secondary: "bg-purple-600 text-white hover:bg-purple-700",
-    ghost: "bg-transparent text-gray-400 hover:text-gray-300 hover:bg-gray-800/50"
+    default: "bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-700/50",
+    primary: "bg-blue-600 text-white hover:bg-blue-700",
+    secondary: "bg-emerald-600 text-white hover:bg-emerald-700",
+    ghost: "bg-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
   };
   
   // Size styles
