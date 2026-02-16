@@ -27,27 +27,3 @@ export const fetchPrompts = async () => {
     categories: mockCategories,
   };
 };
-
-// Simulate search API call
-export const searchPrompts = async (query: string) => {
-  // Simulate network delay
-  await new Promise((resolve) => setTimeout(resolve, 300));
-
-  const lowerCaseQuery = query.toLowerCase();
-
-  const results = mockPrompts
-    .filter(
-      (prompt) =>
-        prompt.title.toLowerCase().includes(lowerCaseQuery) ||
-        prompt.content.toLowerCase().includes(lowerCaseQuery) ||
-        prompt.tags.some((tag) => tag.toLowerCase().includes(lowerCaseQuery))
-    )
-    .map((prompt) => ({
-      id: prompt.id,
-      title: prompt.title,
-      category: prompt.category,
-      tags: prompt.tags,
-    }));
-
-  return results;
-};

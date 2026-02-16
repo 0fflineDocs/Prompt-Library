@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Header from './components/layout/Header';
-import Button from './components/ui/Button';
 import PromptCard from './components/ui/PromptCard';
 import SearchModal from './components/SearchModal';
 import { Prompt, Category } from './types';

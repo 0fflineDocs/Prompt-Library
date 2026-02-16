@@ -15,10 +15,3 @@ export interface Category {
   name: string;
   count?: number;
 }
-
-export interface SearchResult {
-  id: string | number;
-  title: string;
-  category: string;
-  tags: string[];
-}

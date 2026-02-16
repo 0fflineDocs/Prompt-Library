@@ -1,6 +1,6 @@
 // src/components/ui/PromptModal.tsx
 import React, { useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { X, Copy, Check } from 'lucide-react';
 import { Prompt } from '../../types';
 
