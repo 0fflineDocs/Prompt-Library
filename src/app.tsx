@@ -56,7 +56,7 @@ const PromptLibrary: React.FC = () => {
   }, [selectedCategory, searchQuery, prompts]);
 
   return (
-    <div className="bg-slate-900 min-h-screen font-sans text-slate-100">
+    <div className="dashboard-shell">
       <Header onOpenSearch={() => setIsSearchOpen(true)} />
       
       {/* Category Filter */}
@@ -67,14 +67,14 @@ const PromptLibrary: React.FC = () => {
               key={category.id}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                 selectedCategory === category.name 
-                  ? 'bg-slate-800 border border-slate-600/50 text-slate-100' 
-                  : 'bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-slate-200 hover:border-slate-600/50'
+                  ? 'bg-bg-2 border border-accent/40 text-fg-0'
+                  : 'bg-bg-1/70 border border-border text-fg-1 hover:text-fg-0 hover:border-accent/30'
               }`}
               onClick={() => setSelectedCategory(category.name)}
             >
               {category.name}
               {category.count && category.name !== 'All' && (
-                <span className="ml-1 text-slate-500">({category.count})</span>
+                <span className="ml-1 text-muted">({category.count})</span>
               )}
             </button>
           ))}
@@ -83,7 +83,8 @@ const PromptLibrary: React.FC = () => {
         {/* Prompts Grid */}
         {isLoading ? (
           <div className="flex justify-center items-center py-12">
-            <div className="animate-pulse text-slate-400">Loading prompts...</div>
+            <div className="spinner mr-2" />
+            <div className="animate-pulse text-fg-1">Loading prompts...</div>
           </div>
         ) : filteredPrompts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -92,7 +93,7 @@ const PromptLibrary: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center py-12 text-slate-400">
+          <div className="text-center py-12 text-fg-1">
             <p>No prompts found. Try adjusting your filters or search query.</p>
           </div>
         )}

@@ -55,19 +55,19 @@ const PromptModal: React.FC<PromptModalProps> = ({ prompt, onClose, onCopy, isCo
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-        className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-xl bg-slate-900 border border-slate-700/50 shadow-2xl"
+        className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-xl bg-bg-1 border border-border/70 shadow-hard"
         tabIndex={-1}
       >
-        <div className="p-5 border-b border-slate-700/30 flex justify-between items-center sticky top-0 bg-slate-900 backdrop-blur-sm z-10">
+        <div className="p-5 border-b border-divider flex justify-between items-center sticky top-0 bg-bg-1 backdrop-blur-sm z-10">
           <div className="flex items-center gap-3">
-            <h3 className="text-lg font-semibold text-slate-50">{prompt.title}</h3>
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400">
+            <h3 className="text-lg font-semibold text-fg-0">{prompt.title}</h3>
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border border-accent/30 bg-accent/10 text-accent">
               {prompt.category}
             </span>
           </div>
           <button 
             onClick={onClose}
-            className="text-slate-400 hover:text-slate-200 p-1 rounded-full hover:bg-slate-800 transition-colors duration-200"
+            className="text-fg-1 hover:text-fg-0 p-1 rounded-full hover:bg-bg-2 transition-colors duration-200"
             aria-label="Close modal"
           >
             <X size={20} />
@@ -76,35 +76,35 @@ const PromptModal: React.FC<PromptModalProps> = ({ prompt, onClose, onCopy, isCo
         
         <div className="p-5">
           {prompt.description && (
-            <div className="mb-4 pb-4 border-b border-slate-700/30">
-              <h4 className="text-sm font-medium text-slate-400 mb-2">Description:</h4>
-              <p className="text-slate-300">{prompt.description}</p>
+            <div className="mb-4 pb-4 border-b border-divider">
+              <h4 className="text-sm font-medium text-fg-1 mb-2">Description:</h4>
+              <p className="text-fg-1">{prompt.description}</p>
             </div>
           )}
           
           <div>
-            <h4 className="text-sm font-medium text-slate-400 mb-2">Prompt:</h4>
-            <pre className="text-slate-200 whitespace-pre-wrap font-sans text-sm">
+            <h4 className="text-sm font-medium text-fg-1 mb-2">Prompt:</h4>
+            <pre className="text-fg-0 whitespace-pre-wrap font-sans text-sm">
               {prompt.content}
             </pre>
           </div>
           
           <div className="flex flex-wrap gap-2 mt-6">
             {prompt.tags.map((tag) => (
-              <span key={tag} className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium border border-slate-700/50 bg-slate-800/50 text-slate-300">
+               <span key={tag} className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-bg-2/60 text-fg-1">
                 #{tag}
               </span>
             ))}
           </div>
         </div>
         
-        <div className="p-5 border-t border-slate-700/30 sticky bottom-0 bg-slate-900 backdrop-blur-sm flex justify-end">
+        <div className="p-5 border-t border-divider sticky bottom-0 bg-bg-1 backdrop-blur-sm flex justify-end">
           <button
             onClick={onCopy}
             className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
               isCopied 
-                ? 'bg-emerald-500/10 text-emerald-400' 
-                : 'bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400'
+                ? 'border border-ok/30 bg-ok/10 text-ok'
+                : 'border border-ok/30 bg-ok/10 hover:bg-ok/20 text-ok'
             }`}
           >
             {isCopied ? (

@@ -9,9 +9,9 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
   return (
-    <header className="sticky top-0 z-40 h-16 bg-slate-900/95 backdrop-blur-md border-b border-slate-800/50">
+    <header className="sticky top-0 z-40 h-16 bg-bg-0/95 backdrop-blur-md border-b border-border/60">
       <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <h1 className="font-logo text-2xl font-bold text-slate-50">
+        <h1 className="font-logo text-2xl font-bold text-gradient">
           Prompt Library
         </h1>
         <div className="flex items-center gap-3">

@@ -25,25 +25,25 @@ const PromptCard: React.FC<PromptCardProps> = ({ prompt, index = 0 }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: index * 0.05 }}
-        className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-5 hover:bg-slate-800 hover:border-slate-600/50 transition-colors duration-200"
+        className="surface-card frost-row"
       >
         <div className="flex justify-between items-start mb-3">
-          <h3 className="text-sm font-semibold text-slate-50">{prompt.title}</h3>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400">
+          <h3 className="text-sm font-semibold text-fg-0">{prompt.title}</h3>
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border border-accent/30 bg-accent/10 text-accent badge-glow">
             {prompt.category}
           </span>
         </div>
         
         <div className="h-24 overflow-hidden">
-          <p className="text-slate-400 text-sm line-clamp-4">
+          <p className="text-fg-1 text-sm line-clamp-4">
             {prompt.description || prompt.content.substring(0, 150) + "..."}
           </p>
         </div>
         
-        <div className="flex justify-between items-center mt-4 pt-2 border-t border-slate-700/30">
+        <div className="flex justify-between items-center mt-4 pt-2 border-t border-divider">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="text-sm text-slate-400 hover:text-slate-200 flex items-center gap-1 transition-colors duration-200"
+            className="text-sm text-fg-1 hover:text-fg-0 flex items-center gap-1 transition-colors duration-200"
           >
             <Eye size={16} />
             View Prompt
@@ -53,8 +53,8 @@ const PromptCard: React.FC<PromptCardProps> = ({ prompt, index = 0 }) => {
             onClick={handleCopy}
             className={`flex items-center gap-1 ${
               isCopied 
-                ? 'bg-emerald-500/10 text-emerald-400' 
-                : 'bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400'
+                ? 'border border-ok/30 bg-ok/10 text-ok'
+                : 'border border-ok/30 bg-ok/10 hover:bg-ok/20 text-ok'
             } transition-colors duration-200 px-2.5 py-1 rounded-md text-xs font-medium`}
           >
             {isCopied ? (

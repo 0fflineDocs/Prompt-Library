@@ -18,14 +18,14 @@ const Button = ({
   ...props 
 }: ButtonProps) => {
   // Base styles
-  const baseStyles = "inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-slate-600/50 disabled:opacity-50 disabled:pointer-events-none";
+  const baseStyles = "inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-accent/40 disabled:opacity-50 disabled:pointer-events-none";
   
   // Variant styles
   const variantStyles = {
-    default: "bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-700/50",
-    primary: "bg-blue-600 text-white hover:bg-blue-700",
-    secondary: "bg-emerald-600 text-white hover:bg-emerald-700",
-    ghost: "bg-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
+    default: "btn-secondary",
+    primary: "btn-primary btn-glow",
+    secondary: "btn-secondary",
+    ghost: "btn-ghost"
   };
   
   // Size styles
