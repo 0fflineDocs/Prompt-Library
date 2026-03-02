@@ -106,6 +106,10 @@ body {
   50% { opacity: 1; }
 }
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 @keyframes glow-breathe {
   0%, 100% { box-shadow: var(--shadow-glow); }
   50% { box-shadow: var(--shadow-glow-strong); }

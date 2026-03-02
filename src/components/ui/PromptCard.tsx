@@ -29,7 +29,7 @@ const PromptCard: React.FC<PromptCardProps> = ({ prompt, index = 0 }) => {
       >
         <div className="flex justify-between items-start mb-3">
           <h3 className="text-sm font-semibold text-fg-0">{prompt.title}</h3>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border border-accent/30 bg-accent/10 text-accent badge-glow">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border border-accent/30 bg-accent/10 text-accent">
             {prompt.category}
           </span>
         </div>
