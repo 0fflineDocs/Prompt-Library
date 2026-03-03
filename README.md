@@ -7,10 +7,10 @@
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/React-19.2.1-61DAFB?style=flat-square&amp;logo=react&amp;logoColor=white">
-  <img src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.18-06B6D4?style=flat-square&amp;logo=tailwindcss&amp;logoColor=white">
-  <img src="https://img.shields.io/badge/Vite-7.3.1-646CFF?style=flat-square&amp;logo=vite&amp;logoColor=white">
+  <img alt="React 19.2.1" src="https://img.shields.io/badge/React-19.2.1-61DAFB?style=flat-square&amp;logo=react&amp;logoColor=white">
+  <img alt="TypeScript 5.0" src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white">
+  <img alt="Tailwind CSS 4.1.18" src="https://img.shields.io/badge/Tailwind_CSS-4.1.18-06B6D4?style=flat-square&amp;logo=tailwindcss&amp;logoColor=white">
+  <img alt="Vite 7.3.1" src="https://img.shields.io/badge/Vite-7.3.1-646CFF?style=flat-square&amp;logo=vite&amp;logoColor=white">
 </p>
 
 ---
