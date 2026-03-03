@@ -15,9 +15,7 @@
 
 **Prompt Library** is a curated collection of Generative AI prompt templates designed to improve productivity and creativity. It provides searchable, category-based prompts in a modern web interface so you can quickly discover, review, and copy effective prompts for different use cases.
 
-<img width="1246" height="898" alt="image" src="https://github.com/user-attachments/assets/a21c857f-0111-46cd-b35b-eeb8d88bde3f" />
-
-## 🚀 Features
+## Features
 
 - **Searchable Prompts**: Find prompts by keyword, category, or tag
 - **Categorized Collection**: Browse prompts organized into categories like "Generative AI", "Creativity", "Microsoft 365", "Security", and more
@@ -26,7 +24,7 @@
 - **Modern UI**: Clean, responsive interface with dark mode design
 - **Fast Performance**: Built with React and optimized for speed
 
-## 📋 Prompt Categories
+## Prompt Categories
 
 The prompt library currently includes the following categories:
 
@@ -36,7 +34,7 @@ The prompt library currently includes the following categories:
 - **Security**: Security and cybersecurity-focused templates
 - **Writing**: General writing assistance templates
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Core
 
