@@ -1,12 +1,10 @@
-<p>
+<p align="center">
   <br>
   <strong>P &nbsp; R &nbsp; O &nbsp; M &nbsp; P &nbsp; T &nbsp; &nbsp; L &nbsp; I &nbsp; B &nbsp; R &nbsp; A &nbsp; R &nbsp; Y</strong>
   <br>
-  <br>
-  <br>
 </p>
 
-<p>
+<p align="center">
   <img alt="React 19.2.1" src="https://img.shields.io/badge/React-19.2.1-61DAFB?style=flat-square&amp;logo=react&amp;logoColor=white">
   <img alt="TypeScript 5.0" src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white">
   <img alt="Tailwind CSS 4.1.18" src="https://img.shields.io/badge/Tailwind_CSS-4.1.18-06B6D4?style=flat-square&amp;logo=tailwindcss&amp;logoColor=white">
