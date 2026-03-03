@@ -1,12 +1,21 @@
-# Prompt Library
+<p>
+  <br>
+  <strong>P &nbsp; R &nbsp; O &nbsp; M &nbsp; P &nbsp; T &nbsp; &nbsp; L &nbsp; I &nbsp; B &nbsp; R &nbsp; A &nbsp; R &nbsp; Y</strong>
+  <br>
+  <br>
+  <br>
+</p>
 
-[![React](https://img.shields.io/badge/React-19.2.1-61DAFB?logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.18-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-7.3.1-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<p>
+  <img alt="React 19.2.1" src="https://img.shields.io/badge/React-19.2.1-61DAFB?style=flat-square&amp;logo=react&amp;logoColor=white">
+  <img alt="TypeScript 5.0" src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white">
+  <img alt="Tailwind CSS 4.1.18" src="https://img.shields.io/badge/Tailwind_CSS-4.1.18-06B6D4?style=flat-square&amp;logo=tailwindcss&amp;logoColor=white">
+  <img alt="Vite 7.3.1" src="https://img.shields.io/badge/Vite-7.3.1-646CFF?style=flat-square&amp;logo=vite&amp;logoColor=white">
+</p>
 
-A curated collection of Generative AI prompts to enhance your productivity and creativity when working with AI assistants. This web application showcases a variety of prompt templates organized by categories, making it easy to find and use effective prompts for different purposes.
+---
+
+**Prompt Library** is a curated collection of Generative AI prompt templates designed to improve productivity and creativity. It provides searchable, category-based prompts in a modern web interface so you can quickly discover, review, and copy effective prompts for different use cases.
 
 <img width="1246" height="898" alt="image" src="https://github.com/user-attachments/assets/a21c857f-0111-46cd-b35b-eeb8d88bde3f" />
 
