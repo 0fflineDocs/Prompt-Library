@@ -55,7 +55,7 @@ const PromptModal: React.FC<PromptModalProps> = ({ prompt, onClose, onCopy, isCo
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-        className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-xl bg-bg-1 border border-border/70 shadow-hard"
+        className="scroll-panel w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-xl bg-bg-1 border border-border/70 shadow-hard"
         tabIndex={-1}
       >
         <div className="p-5 border-b border-divider flex justify-between items-center sticky top-0 bg-bg-1 backdrop-blur-sm z-10">

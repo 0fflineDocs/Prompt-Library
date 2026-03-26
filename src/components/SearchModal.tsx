@@ -66,7 +66,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ categories, onSearch, onClose
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-        className="w-full max-w-2xl rounded-xl bg-bg-1 border border-border/70 shadow-hard"
+        className="scroll-panel w-full max-w-2xl rounded-xl bg-bg-1 border border-border/70 shadow-hard"
       >
         <div className="p-4 flex items-center border-b border-divider">
           <Search size={20} className="text-fg-1 mr-3" />
@@ -88,7 +88,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ categories, onSearch, onClose
           </button>
         </div>
         
-        <div className="p-4 max-h-96 overflow-y-auto">
+        <div className="scroll-panel p-4 max-h-96 overflow-y-auto">
           <div className="text-sm text-fg-1 mb-2">Categories</div>
           <div className="flex flex-wrap gap-2 mb-4">
             {categories.map((category) => (

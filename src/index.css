@@ -266,6 +266,22 @@ b, strong {
   -webkit-backdrop-filter: blur(12px);
 }
 
+.scroll-panel {
+  scrollbar-color: var(--color-border) var(--color-bg-1);
+}
+
+.scroll-panel::-webkit-scrollbar-track {
+  background: var(--color-bg-1);
+}
+
+.scroll-panel::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+}
+
+.scroll-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
 .dashboard-shell {
   width: 100%;
   max-width: 100%;
