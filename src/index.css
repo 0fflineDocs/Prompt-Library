@@ -185,13 +185,6 @@ b, strong {
   font-family: var(--font-logo);
 }
 
-.topnav-wallpaper {
-  background:
-    radial-gradient(circle at top left, rgba(6, 182, 212, 0.12), transparent 28%),
-    radial-gradient(circle at top right, rgba(59, 130, 246, 0.14), transparent 24%),
-    linear-gradient(180deg, #020617 0%, #02040a 42%, #000000 100%);
-}
-
 .text-gradient-shimmer {
   background: linear-gradient(
     90deg,
