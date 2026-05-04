@@ -1,0 +1,9 @@
+{
+  "id": "windows-roadmap-patch-briefing",
+  "title": "Windows Roadmap + Patch Briefing",
+  "category": "Security",
+  "description": "Compiles a monthly Windows update brief covering new roadmap features from the Windows 11 business roadmap and patch information (security + preview updates) for the current and two prior supported Windows 11 versions.",
+  "content": "Compile a monthly Windows update brief.\n\nSection 1 — Windows roadmap features:\nCheck the Windows roadmap at https://www.microsoft.com/en-us/windows/business/roadmap with filters set to: Platform = Windows 11 PC, Channel/Status fields 2 and 3 = All, Feature type = Feature, Edition = Retail. List only features that are NEW since the previous run of this task (use prior run memory to compare). For each new feature include: title, status (e.g. Rolling out, In preview), short description, and any version it targets. If nothing is new since last run, say so explicitly.\n\nSection 2 — Patch information:\nCover the current Windows 11 version plus the two prior supported versions (e.g. 26H1, 25H2, 24H2 — adjust as Microsoft updates the supported list). For each version, include both the security update (Patch Tuesday — 2nd Tuesday of the previous month) and the non-security preview update (end of previous month). For each patch list: release date, KB number, OS build, and the support.microsoft.com link. Source from each version's update history page (e.g. https://support.microsoft.com/en-gb/topic/windows-11-version-26h1-update-history-... and equivalents for the other versions).",
+  "tags": ["Windows 11", "roadmap", "patch", "KB", "monthly briefing", "Microsoft", "update history", "Deliverable"],
+  "createdAt": "2026-05-04T00:00:00Z"
+}
