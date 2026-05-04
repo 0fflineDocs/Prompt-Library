@@ -11,6 +11,7 @@ const PromptLibrary: React.FC = () => {
   const [filteredPrompts, setFilteredPrompts] = useState<Prompt[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -33,27 +34,29 @@ const PromptLibrary: React.FC = () => {
     loadData();
   }, []);
 
-  // Apply filters whenever category or search query changes
+  // Apply filters whenever category, tag, or search query changes
   useEffect(() => {
     let result = prompts;
-    
-    // Filter by category
+
     if (selectedCategory !== 'All') {
       result = result.filter(prompt => prompt.category === selectedCategory);
     }
-    
-    // Filter by search query
+
+    if (selectedTag) {
+      result = result.filter(prompt => prompt.tags.includes(selectedTag));
+    }
+
     if (searchQuery) {
       const lowerCaseQuery = searchQuery.toLowerCase();
-      result = result.filter(prompt => 
-        prompt.title.toLowerCase().includes(lowerCaseQuery) || 
+      result = result.filter(prompt =>
+        prompt.title.toLowerCase().includes(lowerCaseQuery) ||
         prompt.content.toLowerCase().includes(lowerCaseQuery) ||
         prompt.tags.some(tag => tag.toLowerCase().includes(lowerCaseQuery))
       );
     }
-    
+
     setFilteredPrompts(result);
-  }, [selectedCategory, searchQuery, prompts]);
+  }, [selectedCategory, selectedTag, searchQuery, prompts]);
 
   return (
     <div className="dashboard-shell">
@@ -66,7 +69,7 @@ const PromptLibrary: React.FC = () => {
             <button
               key={category.id}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                selectedCategory === category.name 
+                selectedCategory === category.name
                   ? 'bg-bg-2 border border-accent/40 text-fg-0'
                   : 'bg-bg-1/70 border border-border text-fg-1 hover:text-fg-0 hover:border-accent/30'
               }`}
@@ -78,6 +81,17 @@ const PromptLibrary: React.FC = () => {
               )}
             </button>
           ))}
+          <div className="w-px bg-border mx-1" />
+          <button
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+              selectedTag === 'Deliverable'
+                ? 'bg-bg-2 border border-accent/40 text-fg-0'
+                : 'bg-bg-1/70 border border-border text-fg-1 hover:text-fg-0 hover:border-accent/30'
+            }`}
+            onClick={() => setSelectedTag(selectedTag === 'Deliverable' ? null : 'Deliverable')}
+          >
+            Deliverable
+          </button>
         </div>
 
         {/* Prompts Grid */}
