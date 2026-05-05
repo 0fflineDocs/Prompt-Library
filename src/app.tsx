@@ -91,6 +91,7 @@ const PromptLibrary: React.FC = () => {
             onClick={() => setSelectedTag(selectedTag === 'Deliverable' ? null : 'Deliverable')}
           >
             Deliverable
+            <span className="ml-1 text-muted">({prompts.filter(p => p.tags.includes('Deliverable')).length})</span>
           </button>
         </div>
 
