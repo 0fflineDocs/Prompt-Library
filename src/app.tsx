@@ -16,7 +16,6 @@ const PromptLibrary: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  // Fetch data once on component mount
   useEffect(() => {
     const loadData = async () => {
       try {
