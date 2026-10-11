@@ -1,0 +1,30 @@
+@import "./personal.css";
+
+html[data-personal-theme="black"] {
+  background: var(--p-bg);
+  color: var(--p-text);
+  font-family: var(--p-font);
+  scrollbar-color: var(--p-control-border) var(--p-bg);
+}
+html[data-personal-theme="black"] body {
+  background: var(--p-bg);
+  color: var(--p-text);
+  font-family: var(--p-font);
+}
+html[data-personal-theme="black"] ::selection { background: var(--p-accent); color: var(--p-accent-ink); }
+html[data-personal-theme="black"] :focus-visible { outline: 2px solid var(--p-accent); outline-offset: 3px; }
+html[data-personal-theme="black"] :is(input, textarea) { caret-color: var(--p-accent); }
+
+[data-personal-theme="black"] :is(.page-shell, .scroll-panel, .glass-panel, .surface-card, .card-glow) {
+  background: var(--p-surface);
+  box-shadow: none;
+}
+[data-personal-theme="black"] .page-shell { background: var(--p-bg); }
+[data-personal-theme="black"] .card-glow { border-radius: var(--p-radius); }
+[data-personal-theme="black"] .card-glow::before { display: none; }
+[data-personal-theme="black"] :is(.text-gradient, .text-gradient-shimmer) {
+  color: var(--p-text);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  animation: none;
+}
