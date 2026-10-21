@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 export default defineConfig({
+  base: '/prompt-library/',
+  build: { outDir: 'dist/prompt-library', emptyOutDir: true },
   plugins: [tailwindcss(), react()],
   resolve: {
     alias: {
