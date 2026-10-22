@@ -111,6 +111,14 @@ const PromptLibrary: React.FC = () => {
             <p>No prompts found. Try adjusting your filters or search query.</p>
           </div>
         )}
+
+        <footer className="mt-16 pt-6 border-t border-border/60 text-xs text-muted font-mono">
+          <a href={`${import.meta.env.BASE_URL}llms.txt`} className="hover:text-fg-0 transition-colors">llms.txt</a>
+          {' · '}
+          <a href={`${import.meta.env.BASE_URL}llms-full.txt`} className="hover:text-fg-0 transition-colors">llms-full.txt</a>
+          {' · '}
+          <a href="https://github.com/0fflineDocs/Prompt-Library" className="hover:text-fg-0 transition-colors">source</a>
+        </footer>
       </div>
 
       {/* Search Modal */}
