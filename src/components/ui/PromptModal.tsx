@@ -1,5 +1,6 @@
 // src/components/ui/PromptModal.tsx
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, type CSSProperties } from 'react';
+import { categoryColor } from '../../lib/categories';
 import { motion } from 'framer-motion';
 import { X, Copy, Check } from 'lucide-react';
 import { Prompt } from '../../types';
@@ -61,7 +62,7 @@ const PromptModal: React.FC<PromptModalProps> = ({ prompt, onClose, onCopy, isCo
         <div className="p-5 border-b border-divider flex justify-between items-center sticky top-0 bg-bg-1 backdrop-blur-sm z-10">
           <div className="flex items-center gap-3">
             <h3 className="text-lg font-semibold text-fg-0">{prompt.title}</h3>
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border border-accent/30 bg-accent/10 text-accent">
+            <span className="category-tag" style={{ '--c': categoryColor(prompt.category) } as CSSProperties}>
               {prompt.category}
             </span>
           </div>

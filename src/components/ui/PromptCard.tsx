@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, type CSSProperties } from 'react';
+import { categoryColor } from '../../lib/categories';
 import { motion } from 'framer-motion';
 import { Eye, Copy, Check } from 'lucide-react';
 import { Prompt } from '../../types';
@@ -29,7 +30,7 @@ const PromptCard: React.FC<PromptCardProps> = ({ prompt, index = 0 }) => {
       >
         <div className="flex justify-between items-start mb-3">
           <h3 className="text-sm font-semibold text-fg-0">{prompt.title}</h3>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border border-accent/30 bg-accent/10 text-accent">
+          <span className="category-tag" style={{ '--c': categoryColor(prompt.category) } as CSSProperties}>
             {prompt.category}
           </span>
         </div>

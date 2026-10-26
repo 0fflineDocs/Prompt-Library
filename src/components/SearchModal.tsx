@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, type CSSProperties } from 'react';
+import { categoryColor } from '../lib/categories';
 import { motion } from 'framer-motion';
 import { Search, X } from 'lucide-react';
 import { Category } from '../types';
@@ -94,9 +95,11 @@ const SearchModal: React.FC<SearchModalProps> = ({ categories, onSearch, onClose
             {categories.map((category) => (
               <button 
                 key={category.id}
-                className="px-4 py-2 rounded-lg text-sm font-medium bg-bg-2/60 border border-border text-fg-1 hover:text-fg-0 hover:border-accent/30 transition-colors duration-200"
+                className="filter-chip"
+                style={category.name === 'All' ? undefined : ({ '--c': categoryColor(category.name) } as CSSProperties)}
                 onClick={() => handleCategoryClick(category.name)}
               >
+                {category.name !== 'All' && <i aria-hidden="true" />}
                 {category.name}
                 {category.count && category.name !== 'All' && (
                   <span className="ml-1 text-muted">({category.count})</span>

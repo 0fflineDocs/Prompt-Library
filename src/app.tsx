@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, type CSSProperties } from 'react';
+import { categoryColor } from './lib/categories';
 import { AnimatePresence } from 'framer-motion';
 import Header from './components/layout/Header';
 import PromptCard from './components/ui/PromptCard';
@@ -67,13 +68,12 @@ const PromptLibrary: React.FC = () => {
           {categories.map((category) => (
             <button
               key={category.id}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                selectedCategory === category.name
-                  ? 'bg-bg-2 border border-accent/40 text-fg-0'
-                  : 'bg-bg-1/70 border border-border text-fg-1 hover:text-fg-0 hover:border-accent/30'
-              }`}
+              className="filter-chip"
+              aria-pressed={selectedCategory === category.name}
+              style={category.name === 'All' ? undefined : ({ '--c': categoryColor(category.name) } as CSSProperties)}
               onClick={() => setSelectedCategory(category.name)}
             >
+              {category.name !== 'All' && <i aria-hidden="true" />}
               {category.name}
               {category.count && category.name !== 'All' && (
                 <span className="ml-1 text-muted">({category.count})</span>
@@ -82,11 +82,8 @@ const PromptLibrary: React.FC = () => {
           ))}
           <div className="w-px bg-border mx-1" />
           <button
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-              selectedTag === 'Deliverable'
-                ? 'bg-bg-2 border border-accent/40 text-fg-0'
-                : 'bg-bg-1/70 border border-border text-fg-1 hover:text-fg-0 hover:border-accent/30'
-            }`}
+            className="filter-chip"
+            aria-pressed={selectedTag === 'Deliverable'}
             onClick={() => setSelectedTag(selectedTag === 'Deliverable' ? null : 'Deliverable')}
           >
             Deliverable
