@@ -472,3 +472,12 @@ a, button {
 .filter-chip i { width: 7px; height: 7px; background: var(--c); }
 .filter-chip:hover, .filter-chip[aria-pressed='true'] { color: var(--color-fg-0); border-color: var(--c, var(--color-fg-0)); }
 .filter-chip:focus-visible { outline: 1px solid var(--c, var(--color-fg-0)); outline-offset: 2px; }
+
+/* Footer shared with Favorite Skills (.fs-foot): spaced mono links under a hairline */
+.site-foot {
+  display: flex; flex-wrap: wrap; gap: 14px 22px; margin-top: 4rem; padding-top: 22px;
+  border-top: 1px solid var(--p-border);
+  font: 400 11px/1 var(--p-mono); letter-spacing: .2em;
+}
+.site-foot a { color: var(--p-muted); text-decoration: none; transition: color .3s; }
+.site-foot a:hover, .site-foot a:focus-visible { color: var(--p-text); }

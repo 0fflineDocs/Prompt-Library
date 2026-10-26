@@ -109,12 +109,12 @@ const PromptLibrary: React.FC = () => {
           </div>
         )}
 
-        <footer className="mt-16 pt-6 border-t border-border/60 text-xs text-muted font-mono">
-          <a href={`${import.meta.env.BASE_URL}llms.txt`} className="hover:text-fg-0 transition-colors">llms.txt</a>
-          {' · '}
-          <a href={`${import.meta.env.BASE_URL}llms-full.txt`} className="hover:text-fg-0 transition-colors">llms-full.txt</a>
-          {' · '}
-          <a href="https://github.com/0fflineDocs/Prompt-Library" className="hover:text-fg-0 transition-colors">source</a>
+        <footer className="site-foot">
+          <a href="https://simonhakansson.com/">AI HUB</a>
+          <a href="https://github.com/0fflineDocs/Prompt-Library">GITHUB</a>
+          <a href="https://www.linkedin.com/in/simon-h%C3%A5kansson-20163b137/">LINKEDIN</a>
+          <a href={`${import.meta.env.BASE_URL}llms.txt`}>llms.txt</a>
+          <a href={`${import.meta.env.BASE_URL}llms-full.txt`}>llms-full.txt</a>
         </footer>
       </div>
 
