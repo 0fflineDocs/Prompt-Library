@@ -1,5 +1,5 @@
 export interface Prompt {
-  id: string;
+  id: string | number;
   title: string;
   category: string;
   content: string;
@@ -8,4 +8,10 @@ export interface Prompt {
   featured?: boolean;
   createdAt?: string;
   updatedAt?: string;
+}
+
+export interface Category {
+  id: string | number;
+  name: string;
+  count?: number;
 }

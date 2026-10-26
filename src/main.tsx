@@ -1,11 +1,10 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './personal.css'
-import './site.css'
-import { PromptsPage } from './PromptsPage'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import PromptLibrary from './app'
+import './index.css'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <PromptsPage />
-  </StrictMode>,
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <PromptLibrary />
+  </React.StrictMode>,
 )

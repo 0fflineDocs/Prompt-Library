@@ -7,6 +7,7 @@
 <p align="center">
   <img alt="React 19" src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&amp;logo=react&amp;logoColor=white">
   <img alt="TypeScript 6" src="https://img.shields.io/badge/TypeScript-6-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white">
+  <img alt="Tailwind CSS 4" src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&amp;logo=tailwindcss&amp;logoColor=white">
   <img alt="Vite 8" src="https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&amp;logo=vite&amp;logoColor=white">
 </p>
 
@@ -16,11 +17,11 @@
 
 ## Features
 
-- **Search**: filter by keyword, category, tag or prompt text as you type. `/` jumps to the search field.
-- **Categories**: colour-coded filters; the colours follow the families used on Favorite Skills and the AI Hub (security coral, Microsoft 365 blue, thinking lilac, writing gold, creativity pink, research and automation green). Mapping in `src/categories.ts`.
+- **Search**: find prompts by keyword, category, or tag.
+- **Categories**: browse prompts by area.
 - **One-click copy**: copy a prompt and paste it straight into your AI tool.
-- **Detail view**: a dialog with the full prompt, tags and a link to its source file. `#<prompt-id>` opens a prompt directly.
-- **AI Hub look**: the same Personal UI and card material as simonhakansson.com and Favorite Skills: tilt, spotlight, dithered pixel field and scrambled title on hover, with a dithered tide behind the grid (`src/effects.ts`, `src/site.css`).
+- **Detail view**: read the full prompt with its description and context.
+- **Dark, responsive UI** for desktop and mobile.
 
 ## Prompt categories
 
@@ -42,21 +43,20 @@ The library holds about 50 prompts in these categories:
 
 ## Stack
 
-React 19, TypeScript and Vite, with plain CSS on Personal UI (`src/personal.css`, shared unchanged with AI Hub). Tests run on Vitest with jsdom.
+React 19, TypeScript, Vite, Tailwind CSS v4, Radix UI (scroll area, slot), Framer Motion, and Lucide icons.
 
 ## Development
 
 ```bash
 npm install
 npm run dev      # start the dev server
-npm test         # run the tests
-npm run build    # type-check and build to dist/
+npm run build    # build to dist/
 npm run preview  # serve the production build
 ```
 
 ## Adding a prompt
 
-Each prompt is a JSON file in `src/prompts/`. Files are picked up automatically through `import.meta.glob` and load as one chunk after the page. A new category also needs a colour in `src/categories.ts`; a test fails until it has one.
+Each prompt is a JSON file in `src/prompts/`. Files are picked up automatically through `import.meta.glob`, so no registration is needed.
 
 ```json
 {
