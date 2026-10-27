@@ -109,12 +109,13 @@ const PromptLibrary: React.FC = () => {
           </div>
         )}
 
-        <footer className="site-foot">
-          <a href="https://simonhakansson.com/">AI HUB</a>
-          <a href="https://github.com/0fflineDocs/Prompt-Library">GITHUB</a>
-          <a href="https://www.linkedin.com/in/simon-h%C3%A5kansson-20163b137/">LINKEDIN</a>
-          <a href={`${import.meta.env.BASE_URL}llms.txt`}>llms.txt</a>
-          <a href={`${import.meta.env.BASE_URL}llms-full.txt`}>llms-full.txt</a>
+        <footer className="p-foot site-foot">
+          <nav aria-label="Links">
+            <a href="https://simonhakansson.com/">AI HUB</a>
+            <a href="https://github.com/0fflineDocs">GITHUB</a>
+            <a href="https://www.linkedin.com/in/simon-h%C3%A5kansson-20163b137/">LINKEDIN</a>
+          </nav>
+          <a href="#top">TOP <span aria-hidden="true">↑</span></a>
         </footer>
       </div>
 

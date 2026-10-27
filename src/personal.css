@@ -1,6 +1,6 @@
 @font-face { font-family: Archivo; src: url('/fonts/archivo.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: 'Space Mono'; src: url('/fonts/space-mono.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-/* Personal UI 0.1.0. Opt in with data-personal-theme="black". */
+/* Personal UI 0.2.0. Opt in with data-personal-theme="black". */
 @layer personal.tokens, personal.base, personal.components;
 
 @layer personal.tokens {
@@ -75,3 +75,12 @@
     .p-button { transition: background-color var(--p-duration) ease-out, border-color var(--p-duration) ease-out; }
   }
 }
+
+/* Site footer, the same on every site: hub and profiles on the left, back to top on the right.
+   Deliberately unlayered: sites' own unlayered link resets (a { color: inherit }, Tailwind preflight)
+   would otherwise beat it, so plain selector specificity decides instead. */
+.p-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 22px; margin-block-start: 48px; padding-block: 22px 32px; border-block-start: 1px solid var(--p-border); color: var(--p-muted); font: 400 11px/1 var(--p-mono); letter-spacing: .2em; }
+.p-foot nav { display: flex; flex-wrap: wrap; gap: 14px 22px; }
+.p-foot a { display: inline-block; padding-block: 7px; margin-block: -7px; color: inherit; text-decoration: none; }
+.p-foot a:hover, .p-foot a:focus-visible { color: var(--p-text); }
+@media (prefers-reduced-motion: no-preference) { .p-foot a { transition: color var(--p-duration) ease-out; } }
