@@ -89,7 +89,6 @@ export function PromptsPage() {
     <main className="pl">
       <canvas className="pl-tide" ref={tideRef} aria-hidden="true" />
       <h1 className="pl-brand">PROMPT LIBRARY</h1>
-      <p className="pl-lede">Prompts I use for security, Microsoft 365, writing and thinking. Open one to read it in full and copy it.</p>
 
       <div className="pl-filters">
         <div className="pl-filter-group" role="group" aria-label="Filter by category">
