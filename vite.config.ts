@@ -1,6 +1,6 @@
+/// <reference types="vitest/config" />
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 import { readdirSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -50,10 +50,9 @@ function llmsTxt(): Plugin {
 export default defineConfig({
   base: '/prompt-library/',
   build: { outDir: 'dist/prompt-library', emptyOutDir: true },
-  plugins: [tailwindcss(), react(), llmsTxt()],
-  resolve: {
-    alias: {
-      '@': path.resolve(rootDir, './src'),
-    },
+  plugins: [react(), llmsTxt()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
   },
 })
