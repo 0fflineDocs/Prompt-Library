@@ -144,12 +144,13 @@ export function PromptsPage() {
         </p>
       )}
 
-      <footer className="pl-foot">
-        <a href="https://simonhakansson.com/">AI HUB</a>
-        <a href={`${import.meta.env.BASE_URL}llms.txt`}>llms.txt</a>
-        <a href={`${import.meta.env.BASE_URL}llms-full.txt`}>llms-full.txt</a>
-        <a href="https://github.com/0fflineDocs/Prompt-Library">SOURCE</a>
-        <a href="https://www.linkedin.com/in/simon-h%C3%A5kansson-20163b137/">LINKEDIN</a>
+      <footer className="p-foot">
+        <nav aria-label="Links">
+          <a href="https://simonhakansson.com/">AI HUB</a>
+          <a href="https://github.com/0fflineDocs">GITHUB</a>
+          <a href="https://www.linkedin.com/in/simon-h%C3%A5kansson-20163b137/">LINKEDIN</a>
+        </nav>
+        <a href="#top">TOP <span aria-hidden="true">↑</span></a>
       </footer>
 
       <PromptDialog prompt={open?.prompt ?? null} origin={open?.origin ?? null} onClose={() => { if (open) close() }} />
