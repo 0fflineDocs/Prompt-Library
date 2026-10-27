@@ -4,6 +4,7 @@ import { CATEGORIES } from './categories'
 import { TideField } from './effects'
 import { PromptDialog } from './PromptDialog'
 import { PromptGrid } from './PromptGrid'
+import { closeOnBackdrop, useModal } from './useModal'
 import { DELIVERABLE, loadPrompts, matches } from './prompts'
 import type { Entry } from './prompts'
 
@@ -25,6 +26,8 @@ export function PromptsPage() {
   const [category, setCategory] = useState<string | null>(null)
   const [deliverable, setDeliverable] = useState(false)
   const [query, setQuery] = useState('')
+  const [searchOpen, setSearchOpen] = useState(false)
+  const searchDialogRef = useModal(searchOpen)
   const [open, setOpen] = useState<Open>(null)
 
   useEffect(() => {
@@ -54,14 +57,18 @@ export function PromptsPage() {
     return () => tide.destroy()
   }, [])
 
-  // "/" jumps to search, as on most catalogue sites
+  useEffect(() => {
+    if (searchOpen) searchRef.current?.focus()
+  }, [searchOpen])
+
+  // "/" opens the catalogue search, as on most catalogue sites
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return
       const target = e.target as HTMLElement
       if (target.closest('input, textarea, dialog')) return
       e.preventDefault()
-      searchRef.current?.focus()
+      setSearchOpen(true)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
@@ -86,9 +93,17 @@ export function PromptsPage() {
   ]
 
   return (
-    <main className="pl">
+    <main className="pl" id="top">
       <canvas className="pl-tide" ref={tideRef} aria-hidden="true" />
-      <h1 className="pl-brand">PROMPT LIBRARY</h1>
+      <header className="pl-masthead">
+        <h1 className="pl-brand">PROMPT LIBRARY</h1>
+        <button type="button" className="p-icon-button pl-search-trigger" aria-label="Search prompts" onClick={() => setSearchOpen(true)}>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.3" stroke="currentColor" strokeWidth="1.6" />
+            <path d="m15.5 15.5 4.2 4.2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          </svg>
+        </button>
+      </header>
 
       <div className="pl-filters">
         <div className="pl-filter-group" role="group" aria-label="Filter by category">
@@ -116,17 +131,6 @@ export function PromptsPage() {
           >
             DELIVERABLE<sup>{all.filter((p) => p.tags.includes(DELIVERABLE)).length}</sup>
           </button>
-          <label className="pl-search">
-            <span className="visually-hidden">Search prompts</span>
-            <input
-              ref={searchRef}
-              type="search"
-              placeholder="Search  /"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Escape') { setQuery(''); e.currentTarget.blur() } }}
-            />
-          </label>
         </div>
       </div>
 
@@ -151,6 +155,33 @@ export function PromptsPage() {
         </nav>
         <a href="#top">TOP <span aria-hidden="true">↑</span></a>
       </footer>
+
+      <dialog
+        ref={searchDialogRef}
+        className="pl-dialog pl-search-dialog"
+        aria-labelledby="pl-search-title"
+        onClose={() => setSearchOpen(false)}
+        onClick={closeOnBackdrop}
+      >
+        <form className="pl-search-content" role="search" onSubmit={(event) => event.preventDefault()}>
+          <header className="pl-search-head">
+            <h2 id="pl-search-title">Search prompts</h2>
+            <button type="button" className="pl-d-close" aria-label="Close search" onClick={() => searchDialogRef.current?.close()}>×</button>
+          </header>
+          <label className="pl-search-field">
+            <span className="visually-hidden">Search prompts</span>
+            <input
+              ref={searchRef}
+              className="p-field"
+              type="search"
+              placeholder="Search prompts…"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </label>
+          <p className="pl-search-hint">Search title, description, and prompt text. Press Escape to close.</p>
+        </form>
+      </dialog>
 
       <PromptDialog prompt={open?.prompt ?? null} origin={open?.origin ?? null} onClose={() => { if (open) close() }} />
     </main>
