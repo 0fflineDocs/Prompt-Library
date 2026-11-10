@@ -34,6 +34,7 @@ describe('PromptsPage', () => {
   it('searches titles, descriptions and tags', async () => {
     render(<PromptsPage />)
     await screen.findByRole('button', { name: /^Grill Me,/ })
+    await userEvent.click(screen.getByRole('button', { name: 'Search prompts' }))
     await userEvent.type(screen.getByRole('searchbox', { name: 'Search prompts' }), 'grill me')
     expect(cards().map((c) => c.getAttribute('aria-label'))).toContain('Grill Me, Strategy')
   })
